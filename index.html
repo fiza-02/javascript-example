@@ -13,8 +13,8 @@
     </tr>
     <tr align="center">
     <td  height="30px" id ="clear">AC</td>
-    <td id = "sign">+/-</td>
-    <td id ="perc">%</td>
+    <td id = "leftp">(</td>
+    <td id ="rightp">)</td>
     <td id ="div">/</td>
     </tr>
     <tr align="center">
@@ -50,20 +50,20 @@
         function printDigit(e){
             let result = document.getElementById('result');
             let obj = e.target;
-            if (result.textContent == 0)
-            result.textContent = obj.textContent;
+            if (result.value == 0)
+            result.value = obj.textContent;
             else
-            result.textContent += obj.textContent;
+            result.value += obj.textContent;
         }
 
         function printSymbol(e){
             let result = document.getElementById('result');
             let obj = e.target;
-            result.textContent += obj.textContent;
+            result.value += obj.textContent;
         }
 
         function clearScreen(){
-            document.getElementById("result").textContent = 0;
+            document.getElementById("result").value = 0;
         }
 
         let num1 = document.getElementById("num1");
@@ -81,9 +81,10 @@
         let add = document.getElementById("add");
         let sub = document.getElementById("sub");
         let mul = document.getElementById("mul");
-        let per = document.getElementById("perc");
         let div = document.getElementById("div");
         let clear = document.getElementById("clear");
+        let leftp = document.getElementById("leftp");
+        let rightp = document.getElementById("rightp");
         
         let equal = document.getElementById("equal");
 
@@ -101,13 +102,14 @@
         add.addEventListener('click',printSymbol);
         sub.addEventListener('click',printSymbol);
         mul.addEventListener('click',printSymbol);
-        per.addEventListener('click',printSymbol);
         div.addEventListener('click',printSymbol);
         decimal.addEventListener('click',printSymbol);
         clear.addEventListener('click',clearScreen);
+        leftp.addEventListener('click', printSymbol);
+        rightp.addEventListener('click', printSymbol);
 
         equal.addEventListener('click', 
-        e=> result.textContent = eval(result.textContent)
+        e=> result.value = eval(result.value)
         )
 
 
