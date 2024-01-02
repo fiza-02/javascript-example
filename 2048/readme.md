@@ -1,0 +1,1 @@
+https://2048daily.com/
