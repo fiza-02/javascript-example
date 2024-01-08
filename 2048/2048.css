@@ -13,11 +13,6 @@ body{
     font-size: 7.5vmin;
 }
 
-:root{
-    --grid-size:4;
-    --cell-size: 20vmin;
-    --cell-gap: 2vmin;
-}
 
 #game-board{
     display:grid;
